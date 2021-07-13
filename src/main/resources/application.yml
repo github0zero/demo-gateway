@@ -4,10 +4,10 @@ spring:
     name: demo-gateway
   cloud:
     sentinel:
-#      enabled: false
       transport:
-        dashboard: 139.155.8.239:8080
+        dashboard: 121.4.127.248:8080
         port: 8012
+#        clientIp: 139.155.8.239
     gateway:
       enabled: true
       discovery:
@@ -15,7 +15,7 @@ spring:
           lower-case-service-id: true
       routes:
         - id: demo-auth-route
-          uri: lb://demo_auth
+          uri: lb://demo-auth
           predicates:
             - Path=/auth/**
           filters:
@@ -37,3 +37,7 @@ management:
         include: "*"
   server:
     port: 8011
+logging:
+  config: classpath:log4j2-dev.xml
+  level:
+    cn.qaq.demo_gateway: info
