@@ -2,10 +2,10 @@ spring:
   cloud:
     nacos:
       config:
-        server-addr: 121.4.127.248:8848
+        server-addr: 124.223.53.141:8848
         namespace: demo-apps-2233
       discovery:
-        server-addr: 121.4.127.248:8848
+        server-addr: 124.223.53.141:8848
         namespace: demo-apps-2233
 #     注册到nacos为内网ip，如果内网ip不通，可设置公网ip
 #        ip: ip

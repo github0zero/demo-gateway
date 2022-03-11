@@ -6,6 +6,6 @@
 
 FROM openjdk:8-jdk-alpine
 VOLUME /tmp
-COPY demo-gateway-1.0.0.jar app.jar
-RUN sh -c 'touch ./app.jar'
-ENTRYPOINT ["java","-jar","/app.jar"]
+ENV JAVA_OPTS="$JAVA_OPTS"
+COPY demo-gateway-1.0.0.jar demo-gateway-service.jar
+ENTRYPOINT ["java","-jar","/demo-gateway-service.jar","$JAVA_OPTS"]
